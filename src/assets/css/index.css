@@ -85,12 +85,11 @@ h5{
   color: #FFFFFF;
 }
 
-#log_in_btn{
-  color: #FFFFFF;
-  border-color: #FFFFFF;
-}
+/* #log_in_btn{
 
-#reg_btn{
+} */
+
+#openModalBtn2{
   color: #6cb9de;
   background-color: #FFFFFF;
   border-color: #FFFFFF;
@@ -156,4 +155,41 @@ ul{
 
 .wrapper {
   display: flex;
+}
+
+.popup-bg{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: none;
+}
+
+.popup{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28%;
+  background: #FFFFFF;
+  padding: 5px;
+  transform: translate(-50%, -50%);
+  border-radius: 4%;
+  padding-top: 60px;
+}
+
+.btn-close{
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+#openModalBtn{
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+#reg_button{
+  background-color: rgb(167, 8, 8);
 }

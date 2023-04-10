@@ -8,8 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/index.css">
     <link href="carousel.css" rel="stylesheet">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
-    <script src="/docs/5.3/assets/js/color-modes.js"></script>
   </head>
   <body>
     <header class="d-flex flex-wrap py-3">
@@ -22,8 +20,8 @@
             <li><a href="#news"id="header_link"  class="nav-link px-2">Новости</a></li>
         </ul>
         <div class="col-md-3 text-end">
-            <button id="log_in_btn" type="button" class="btn btn-outline-primary me-2">Войти</button>
-            <button id="reg_btn"type="button" class="btn btn-primary">Зарегистрироваться</button>
+            <button id="openModalBtn" type="button" class="btn btn-outline-primary me-2 openModal">Войти</button>
+            <button id="openModalBtn2"type="button" class="btn btn-primary">Зарегистрироваться</button>
         </div>
     </header>
     <main>
@@ -37,7 +35,7 @@
                     <img src="assets/img/imgonline-com-ua-Resize-pL44yPT49vhn9DW.png" alt="ЖК Пригород Лесное" width="100%" height="10%">
                     <div class="container">
                         <div class="carousel-caption text-start">
-                            <h1>Окружение</h1>
+                            <h1>Расположение</h1>
                             <p>Пригород лесное - район с высоким уровнем экологии.</p>
                         </div>
                     </div>
@@ -109,7 +107,7 @@
         <hr class="featurette-divider">
         <div class="row featurette" id="description">
             <div class="col-md-7">
-                <h2 class="featurette-heading fw-normal lh-1">О Жилом Комплексе</h2>
+                <h2 class="featurette-heading fw-normal lh-1">О жилом комплексе</h2>
                 <p class="lead">«Пригород Лесное» — жилой комплекс, в котором ценят разнообразие сценариев для жизни и отдыха. Одновременно удачное расположение квартала на юго-востоке Московской области — в 7 км от МКАД — и природное окружение помогают соблюдать баланс между городским ритмом и умиротворением.</p>
                 <p class="lead">Рядом с проектом — метро «Домодедовская» и скоростные магистрали. В «Пригороде Лесном» есть собственные детские сады, школы, поликлиника и магазины. Во дворах домов оборудован пешеходный бульвар, построены детские и спортивные площадки</p>
             </div>
@@ -128,6 +126,146 @@
             </div>
         </div>
     </main>
+
+    <div id="myModal" style="display:none;" class="popup-bg">
+      <div id="myModalContent" class="popup">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <h1 class="fw-bold mb-0 fs-2" style="margin: auto;">Авторизация</h1>
+          <button id="closeModalBtn" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5 pt-0">
+          <form class="">
+            <div class="form-floating mb-3">
+              <input type="textarea" class="form-control rounded-3" id="floatingInput" placeholder="Логин">
+              <label for="floatingInput">Логин</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Пароль">
+              <label for="floatingPassword">Пароль</label>
+            </div>
+            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Войти</button>
+            <small class="text-body-secondary">Нажимая кнопку "Войти", вы соглашаетесь с условиями пользования</small>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="myModal2" style="display:none;" class="popup-bg">
+      <div id="myModalContent2" class="popup">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <h1 class="fw-bold mb-0 fs-2" style="margin: auto;">Регистрация</h1>
+          <button id="closeModalBtn" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5 pt-0">
+          <form class="">
+            <div class="form-floating mb-3">
+              <input type="textarea" class="form-control rounded-3" id="floatingInput" placeholder="Фамилия" required>
+              <label for="floatingInput">Фамилия</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="textarea" class="form-control rounded-3" id="floatingInput" placeholder="Имя" required>
+              <label for="floatingInput">Имя</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="textarea" class="form-control rounded-3" id="floatingInput" placeholder="Отчество">
+              <label for="floatingInput">Отчество</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="textarea" class="form-control rounded-3" id="floatingInput" placeholder="Логин" required>
+              <label for="floatingInput">Логин</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Пароль" required>
+              <label for="floatingPassword">Пароль</label>
+            </div>
+            <button id="reg_button" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Зарегистрироваться</button>
+            <small class="text-body-secondary">Нажимая кнопку "Зарегистрироваться", вы соглашаетесь с условиями пользования</small>
+          </form>
+        </div>
+      </div>
+    </div>
+      
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+   $('#openModalBtn').click(function() {
+      $('#myModal').show();
+   });
+   
+   $('#closeModalBtn, #myModal').click(function() {
+      $('#myModal').hide();
+   });
+   
+   $('#myModalContent').click(function(event) {
+      event.stopPropagation();
+   });
+});
+
+$(document).ready(function() {
+   $('#openModalBtn2').click(function() {
+      $('#myModal2').show();
+   });
+   
+   $('#closeModalBtn, #myModal2').click(function() {
+      $('#myModal2').hide();
+   });
+   
+   $('#myModalContent2').click(function(event) {
+      event.stopPropagation();
+   });
+});
+</script>
+
+<style>
+#myModal {
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(255, 255, 255, 0.5);
+}
+
+#myModalContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28%;
+  background: #FFFFFF;
+  padding: 5px;
+  transform: translate(-50%, -50%);
+  border-radius: 4%;
+  padding-top: 60px;
+}
+
+#myModal2 {
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(255, 255, 255, 0.5);
+}
+
+#myModalContent2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28%;
+  background: #FFFFFF;
+  padding: 5px;
+  transform: translate(-50%, -50%);
+  border-radius: 4%;
+  padding-top: 60px;
+}
+</style>
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
+    <script src="/docs/5.3/assets/js/color-modes.js"></script>
+    <script src="/src/js/main.js"></script>
   </body>
   <footer class="row py-5">
     <div id="footer_navigation" class="wrapper">
