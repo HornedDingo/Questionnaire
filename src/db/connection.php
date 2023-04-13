@@ -1,16 +1,12 @@
 <?php
-    $servername = 'localhost:3307';
-    $database = "questionnare_db";
-    $username = "root";
-    $password = "";
-
-    $conn = mysqli_connect($servername, $username, $password, $database);
-
-    if (!$conn) {
-        print("Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error());
+    $mysqli = mysqli_init();
+    function connectDB(){
+        global $mysqli;
+        $mysqli = mysqli_connect("localhost", "root", "root", "questionnare_db", 3307);
     }
-    else {
-        print("Соединение установлено успешно");
+
+    function closeDB(){
+        global $mysqli;
+        mysqli_close($mysqli);;
     }
-    mysqli_close($conn);
 ?>
