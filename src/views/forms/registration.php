@@ -7,23 +7,23 @@
         <div class="modal-body p-5 pt-0">
             <form class="" method="POST">
             <div action="#" class="form-floating mb-3">
-                <input type="textarea" class="form-control rounded-3" id="floatingInput" placeholder="Фамилия" required>
+                <input type="textarea" class="form-control rounded-3" placeholder="Фамилия" required>
                 <label for="floatingInput">Фамилия</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="textarea" class="form-control rounded-3" id="floatingInput" placeholder="Имя" required>
+                <input type="textarea" class="form-control rounded-3" placeholder="Имя" required>
                 <label for="floatingInput">Имя</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="textarea" class="form-control rounded-3" id="floatingInput" placeholder="Отчество">
+                <input type="textarea" class="form-control rounded-3" placeholder="Отчество">
                 <label for="floatingInput">Отчество</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="textarea" class="form-control rounded-3" id="floatingInput" placeholder="Логин" required>
+                <input type="textarea" class="form-control rounded-3" placeholder="Логин" required>
                 <label for="floatingInput">Логин</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Пароль" required>
+                <input type="password" class="form-control rounded-3" placeholder="Пароль" required>
                 <label for="floatingPassword">Пароль</label>
             </div>
             <button id="reg_button" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Зарегистрироваться</button>

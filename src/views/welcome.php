@@ -1,11 +1,10 @@
-<?php
-session_start();
-if (!isset($_SESSION["login"])) {
- header("location: index.html");
- exit();
-}
+<?php session_start();
+  if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
+  } else {
+    header('Location: ../../index.php');
+    exit();
+  }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
