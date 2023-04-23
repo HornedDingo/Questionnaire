@@ -17,7 +17,7 @@
         } else {
             echo "Не удалось добавить новую запись в базу данных!";
         }
-        header('Location: ../views/admin_page.php');
+        header('Location: ../views/admin_page.php?page=users');
     }
     closeDB();
 ?>
