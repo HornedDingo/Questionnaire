@@ -1,4 +1,7 @@
 <?php require_once dirname(__DIR__) . '../tables/news.php';?>
+<?php require_once dirname(__DIR__) . '../forms/edit_news.php';?>
+<?php require_once dirname(__DIR__) . '../forms/add_news.php';?>
+
 <script>
     $(document).ready(function() {
         $('#myTable2').DataTable({
@@ -77,5 +80,101 @@
             alert("Ошибка удаления записи");
             }
         });
+    });    
+
+    //функция для заполнения формы редактирования
+    $(document).ready(function() {
+        $('.datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
+        $('.edit-row').click(function() {
+        var row = $(this).closest('tr');
+        var title = row.find('td:nth-child(2)').text();
+        var description = row.find('td:nth-child(3)').text();
+        var id = row.find('td:first').text();
+        $('#edit-news-title').val(title);
+        $('#edit-news-description').val(description);
+        $('#edit-news-id').val(id);
+        $('#edit-form').show();
+        });
     });
+
+    //функция для закрытия формы редактирования
+    function hideEditForm() {
+        $('#edit-form').hide();
+        $('#add-form').hide();
+    }
+
+    //функция для открытия формы создания новой записи
+    function showAddForm(){
+        $('#add-form').show();
+    }
+    
+    // function addNewsToDB() {
+    //     // Проверяем, что все поля формы были заполнены
+    //     if ($('#add-news-title').val() === '' || $('#add-news-description').val() === '' || $('#addDate').val() === '') {
+    //         alert('Заполните все поля формы!');
+    //         return false;
+    //     }
+
+    //     // Собираем данные из формы в объект data
+    //     var data = {
+    //         "title": $('#add-news-title').val(),
+    //         "description": $('#add-news-description').val(),
+    //         "date": $('#addDate').val()
+    //     };
+
+    //     // Создаем POST запрос на добавление записи в таблицу news
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: '../functions/add_news.php',
+    //         data: data,
+    //         dataType: 'json',
+    //         success: function(response) {
+    //             // Если запрос прошел успешно, очищаем поля формы и обновляем таблицу
+    //             $('#add-news-title').val('');
+    //             $('#add-news-description').val('');
+    //             $('#addDate').val('');
+    //             $('#addModal').modal('hide');
+    //             table2.ajax.reload();
+    //         },
+    //         error: function() {
+    //             alert('Ошибка: не удалось добавить новость');
+    //         }
+    //     });
+
+    //     return true;
+    // }
+
+    // $('#add-news-form').submit(function(e) {
+    //     e.preventDefault(); // Отменяем стандартную отправку формы
+    //     addNewsToDB();
+    // });
+    // function addNews() {
+    //     var title = $("#add-news-title").val();
+    //     var description = $("#add-news-description").val();
+    //     var date = $("#addDate").val();
+
+    //     if (title && description && date) {
+    //         $.ajax({
+    //             url: "../functions/add_news.php",
+    //             type: "POST",
+    //             data: {
+    //                 title: title,
+    //                 description: description,
+    //                 date: date
+    //             },
+    //             success: function(response) {
+    //                 if (response == "success") {
+    //                     location.reload();
+    //                 } else {
+    //                     alert("Ошибка: " + response);
+    //                 }
+    //             },
+    //             error: function(jqXHR, textStatus, errorThrown) {
+    //                 console.log(textStatus, errorThrown);
+    //             }
+    //         });
+    //     } else {
+    //         alert("Заполните все поля!");
+    //     }
+    // }
 </script>
