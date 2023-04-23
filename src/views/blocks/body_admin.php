@@ -1,90 +1,6 @@
-<button id="openCreateUserModalBtn" name="openModalBtn" type="button" class="btn btn-outline-primary me-2">Добавить</button>
-<div id="createUserModal" class="popup-bg">
-    <div id="createUserModalContent" class="popup">
-        <div class="modal-header p-5 pb-4 border-bottom-0">
-            <h1 class="fw-bold mb-0 fs-2" style="margin: auto;">Добавить пользователя</h1>
-            <button id="closeModalBtn" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body p-5 pt-0">
-            <form method="post" action="../../../src/functions/add_user.php">
-                <div class="form-floating mb-3">
-                    <input name="login" type="text" class="form-control rounded-3" placeholder="Логин" id="login" required>
-                    <label for="login">Логин</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input name="password" type="password" class="form-control rounded-3" placeholder="Пароль" id="password" required>
-                    <label for="password">Пароль</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input name="surname" type="text" class="form-control rounded-3" placeholder="Фамилия" id="surname" required>
-                    <label for="surname">Фамилия</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input name="name" type="text" class="form-control rounded-3" placeholder="Имя" id="name" required>
-                    <label for="name">Имя</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input name="patronymic" type="text" class="form-control rounded-3" placeholder="Отчество" id="patronymic" required>
-                    <label for="patronymic">Отчество</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <p id="fail"></p>
-                </div>
-                <button id="signIn" name="add_user" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Добавить запись</button>
-            </form>
-        </div>
-    </div>
-</div>
-<div>
-    <table id="myTable" class="display" width="80%">
-        <thead>
-            <tr>
-            <th style="display: none;">ID пользователя</th>
-            <th class="th_head">Логин</th>
-            <th class="th_head">Пароль</th>
-            <th class="th_head">Фамилия</th>
-            <th class="th_head">Имя</th>
-            <th class="th_head">Отчество</th>
-            <th class="th_head">Действия</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-            <th style="display: none;">ID пользователя</th>
-            <th class="th_head">Логин</th>
-            <th class="th_head">Пароль</th>
-            <th class="th_head">Фамилия</th>
-            <th class="th_head">Имя</th>
-            <th class="th_head">Отчество</th>
-            <th class="th_head">Действия</th>
-            </tr>
-        </tfoot>
-        <tbody>
-            <?php
-                require_once dirname(__DIR__) . '../../functions/function.php';
-                connectDB();
-                $result = $mysqli->query("SELECT ID_user, login, password, surname, name_user, patronymic, role_ID FROM user");
-
-                if (mysqli_num_rows($result) > 0) {
-                while($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr><td style='display: none;'>" . $row["ID_user"] . "</td>
-                    <td style='background-color: #FFFFFF;'>" . $row["login"] . "</td>
-                    <td style='background-color: #FFFFFF;'>" . $row["password"] . "</td>
-                    <td style='background-color: #FFFFFF;'>" . $row["surname"] . "</td>
-                    <td style='background-color: #FFFFFF;'>" . $row["name_user"] . "</td>
-                    <td style='background-color: #FFFFFF;'>" . $row["patronymic"] . "</td>
-                    <td style='background-color: #FFFFFF;'>".null."</td></tr>";
-                }
-                } else {
-                echo "0 results";
-                }
-                closeDB();
-            ?>
-        </tbody>
-    </table>
-</div>
-
-
+<?php require_once dirname(__DIR__) . '../forms/add_user.php';?>
+<?php require_once dirname(__DIR__) . '../forms/edit_user.php';?>
+<?php require_once dirname(__DIR__) . '../tables/users.php';?>
 
 <script>
     $(document).ready(function() {
@@ -123,31 +39,7 @@
             }]
         });
     });
-</script>
 
-<div id="editModal" class="modal">
-  <form id="editForm" action="edit_user.php" method="post">
-    <input type="hidden" id="editUserId" name="id" value="">
-    <label for="editLogin">Логин</label>
-    <input type="text" id="editLogin" name="login" value="">
-    <br><br>
-    <label for="editPassword">Пароль</label>
-    <input type="password" id="editPassword" name="password" value="">
-    <br><br>
-    <label for="editSurname">Фамилия</label>
-    <input type="text" id="editSurname" name="surname" value="">
-    <br><br>
-    <label for="editName">Имя</label>
-    <input type="text" id="editName" name="name_user" value="">
-    <br><br>
-    <label for="editPatronymic">Отчество</label>
-    <input type="text" id="editPatronymic" name="patronymic" value="">
-    <br><br>
-    <input type="submit" value="Сохранить">
-  </form>
-</div>
-
-<script>
     //открываем (или закрываем) форму создания нового пользователя
     var modal = document.getElementById('createUserModal');
     var openModalBtn = document.getElementById('openCreateUserModalBtn');
@@ -233,6 +125,7 @@
             }
         });
     });
+
     // функция для переноса данных из таблицы в форму редактирования
     function fillEditForm(data) {
         var row = $(data).closest("tr");
@@ -263,14 +156,5 @@
                 $(this).hide();
             }
         });
-    });
-</script>
-<script>
-    document.getElementById('openModalBtn').addEventListener('click', function(){
-        document.getElementById('myModal').style.display = 'block';
-    });
-
-    document.getElementById('closeModalBtn').addEventListener('click', function(){
-        document.getElementById('myModal').style.display = 'none';
     });
 </script>

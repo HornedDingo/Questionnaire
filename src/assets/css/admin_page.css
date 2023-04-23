@@ -1,208 +1,165 @@
 *{
-    outline: none;
-  }
+  outline: none;
+}
 
-  a{
-    color: #b17a31;
-  }
+a{
+  color: #b17a31;
+}
 
-  a:hover{
-    color: #d6a86c;
-  }
-  
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-  }
-  
-  .b-example-vr {
-    flex-shrink: 0;
-    width: 1.5rem;
-    height: 100vh;
-  }
-  
-  .bi {
-    vertical-align: -.125em;
-    fill: currentColor;
-  }
-  
-  .block{
-    display: inline-block;
-    margin: auto;
-    align-items: center;
-  }
-  
-  #button_exit{
-    margin-right: 2%;
-  }
+a:hover{
+  color: #d6a86c;
+}
 
-  #footer_navigation{
-    margin: auto;
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
   }
-  
-  #footer_route{
-    margin-top: 4%;
-    color: #FFFFFF;
-    font-size: medium;
-  }
-  
-  header{
-    background-color: antiquewhite;
-    color: #d6a86c;
-    justify-content: space-between;
-  }
+}
 
-  #items{
-    margin: auto;
-  }
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
 
-  #logo{
-    margin: auto;
-  }
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
 
-  .nav-link{
-    color: #a06623!important;
-  }
+.block{
+  display: inline-block;
+  margin: auto;
+  align-items: center;
+}
 
-  .nav-link:hover{
-    color: #d6a86c!important;
-  }
+/* Стиль для шапки */
+header{
+  background-color: antiquewhite;
+  color: #d6a86c;
+  justify-content: space-between;
+}
 
-  #profile_link{
-    margin: auto;
-  }
+#items{
+  margin: auto;
+}
 
-  .wrapper {
-    display: flex;
-  }
-  
-  #openCreateUserModalBtn{
-    color: #FFFFFF!important;
-    border: none;
-    background-color: #a06623!important;
-    margin: auto;
-  }
-  
-  #openCreateUserModalBtn:hover{
-    background-color:  #d6a86c!important;
-    color: #FFFFFF!important;
-  }
+#logo{
+  margin: auto;
+}
 
-  /* Стиль для контейнера таблицы */
-  body {
-    background-color: antiquewhite;
-  }
-  
-  .container {
-    background-color: #d6a86c;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-  }
-  
-  /* Стиль для таблицы */
-  table {
-    width: 100%;
-    margin-bottom: 20px;
-    background-color: antiquewhite;
-    border-radius: 20px;
-  }
+.nav-link{
+  color: #a06623!important;
+}
 
-  #myTable tr:hover{
-    background-color: rgb(245, 219, 188)!important;
-  }
+.nav-link:hover{
+  color: #d6a86c!important;
+}
 
-  #myTable th.sorting_asc,
-    #myTable th.sorting_desc {
-    background-color: rgb(245, 219, 188)!important;
-  }
-  
-  th, td {
-    padding: 12px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: transparent!important;
-    color: #6b3d08;
-  }
+#profile_link{
+  margin: auto;
+}
 
-  .th_head{
-    font-weight: normal!important;
-  }
-  
-  /* Стиль для формы добавления данных */
-  form#add-form {
-    background-color: antiquewhite;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-  }
-  
-  form#add-form input[type="text"] {
-    display: block;
-    margin-bottom: 10px;
-    border: 2px solid #d6a86c;
-    border-radius: 5px;
-    padding: 5px;
-    width: 100%;
-  }
-  
-  form#add-form button[type="submit"] {
-    background-color: #d6a86c;
-    color: white;
-    border: 0;
-    border-radius: 5px;
-    padding: 5px 20px;
-    cursor: pointer;
-  }
+.wrapper {
+  display: flex;
+}
+
+#exitBtn{
+  color: #FFFFFF!important;
+  border: none;
+  background-color: #a06623!important;
+  margin: auto;
+}
+
+#exitBtn:hover{
+  background-color:  #d6a86c!important;
+  color: #FFFFFF!important;
+}
+
+/* Стиль для контейнера таблицы */
+body {
+  background-color: antiquewhite;
+}
+
+.container {
+  background-color: #d6a86c;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+/* Стиль для таблицы */
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: antiquewhite;
+  border-radius: 20px;
+}
+
+#myTable tr:hover{
+  background-color: rgb(245, 219, 188)!important;
+}
+
+#myTable th.sorting_asc,
+  #myTable th.sorting_desc {
+  background-color: rgb(245, 219, 188)!important;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: transparent!important;
+  color: #6b3d08;
+}
+
+.th_head{
+  font-weight: normal!important;
+}
+
+/* Стиль для формы добавления данных */
+form#add-form {
+  background-color: antiquewhite;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+form#add-form input[type="text"] {
+  display: block;
+  margin-bottom: 10px;
+  border: 2px solid #d6a86c;
+  border-radius: 5px;
+  padding: 5px;
+  width: 100%;
+}
+
+form#add-form button[type="submit"] {
+  background-color: #d6a86c;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 20px;
+  cursor: pointer;
+}
   
   /* Стиль для кнопок удаления и редактирования */
-  table .delete-row,
-  table .edit-row {
-    background-color: #d6a86c;
-    color: white;
-    border: 0;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-right: 2%;
-  }
+
   
-  table .delete-row:hover,
-  table .edit-row:hover {
-    opacity: 0.8;
-    background-color: #a06623;
-  }
+.dataTables_filter input {
+  border-radius: 4px;
+  margin-right: 15%!important;
+  margin-bottom: 8%;
+  content: "dfdfd";
+  color: #999;
+}
 
-  button.buttons-pdf {
-    background-color: #e8c69a;
-    color: white;
-    border: 0;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin-top: 3%;
-    margin-left: 5%;
-  }
-
-  button.buttons-pdf:hover {
-    background-color: #d6a86c;
-  }
-  
-  .dataTables_filter input {
-    border-radius: 4px;
-    margin-right: 15%!important;
-    margin-bottom: 8%;
-    content: "dfdfd";
-    color: #999;
-  }
-
-  .dataTables_wrapper {
-    margin-left: 5%;
-    margin-right: 5%;
-  }
+.dataTables_wrapper {
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
 #createUserModal {
   position: fixed;
@@ -248,8 +205,53 @@
   padding-top: 60px;
 }
 
+/* Стиль для кнопок */
 .btn-close{
   position: absolute;
   top: 30px;
   right: 30px;
+}
+
+#openCreateUserModalBtn{
+  color: #FFFFFF!important;
+  border: none;
+  background-color: #a06623!important;
+  margin: auto;
+}
+
+#openCreateUserModalBtn:hover{
+  background-color:  #d6a86c!important;
+  color: #FFFFFF!important;
+}
+
+table .delete-row,
+table .edit-row {
+  background-color: #d6a86c;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 2%;
+}
+
+table .delete-row:hover,
+table .edit-row:hover {
+  opacity: 0.8;
+  background-color: #a06623;
+}
+
+button.buttons-pdf {
+  background-color: #e8c69a;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+button.buttons-pdf:hover {
+  background-color: #d6a86c;
 }

@@ -9,6 +9,6 @@
         <li><a href="/src//views//article.php" id="header_link" class="nav-link px-2">Профиль</a></li>
     </ul>
     <div id="button_exit">
-        <button id="openModalBtn" class="btn btn-outline-primary me-2 openModal">Выйти</button>
+        <button id="exitBtn" class="btn btn-outline-primary me-2 openModal">Выйти</button>
     </div>
 </header>
