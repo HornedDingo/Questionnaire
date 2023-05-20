@@ -22,13 +22,13 @@
                 exit();
             }
             elseif ($user['role_ID'] === 2){
-                header('Location: ../views/welcome.php');
+                header('Location: ../views/moderator_page.php');
                 exit();
             }
-            // else{
-            //     header('Location: ../views/welcome.php');
-            //     exit();
-            // }
+            else{
+                header('Location: ../views/user_page.php?page=news');
+                exit();
+            }
         } else {
             // Неверные учетные данные
             $_SESSION['loggedIn'] = false;

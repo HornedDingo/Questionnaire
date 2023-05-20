@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" onclick="showAddForm()">Добавить новость</button>
+<button id="news" type="button" class="btn btn-primary" onclick="showAddForm()">Добавить новость</button>
 <div>
     <table id="myTable2" class="display" width="80%">
         <thead>

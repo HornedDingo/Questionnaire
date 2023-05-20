@@ -100,7 +100,7 @@
           foreach ($news as $row) {
             $news_description = getNewsDetails($row["ID_news"]);
             echo'
-            <a href="/src//views//blocks//article.php?news_id='.$row['ID_news'].'" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
               <img src="/src/assets/icons/news-1.png" alt="twbs" width="30" height="30" class="flex-shrink-0">
               <div class="d-flex gap-2 w-100 justify-content-between">
                 <div>

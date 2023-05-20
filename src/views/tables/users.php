@@ -4,7 +4,7 @@
             <tr>
             <th style="display: none;">ID пользователя</th>
             <th class="th_head">Логин</th>
-            <th class="th_head">Пароль</th>
+            <th class="th_head" style="display: none;">Пароль</th>
             <th class="th_head">Фамилия</th>
             <th class="th_head">Имя</th>
             <th class="th_head">Отчество</th>
@@ -15,7 +15,7 @@
             <tr>
             <th style="display: none;">ID пользователя</th>
             <th class="th_head">Логин</th>
-            <th class="th_head">Пароль</th>
+            <th class="th_head" style="display: none;">Пароль</th>
             <th class="th_head">Фамилия</th>
             <th class="th_head">Имя</th>
             <th class="th_head">Отчество</th>
@@ -32,7 +32,7 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo "<tr><td style='display: none;'>" . $row["ID_user"] . "</td>
                     <td style='background-color: #FFFFFF;'>" . $row["login"] . "</td>
-                    <td style='background-color: #FFFFFF;'>" . $row["password"] . "</td>
+                    <td style='background-color: #FFFFFF; display: none;' >" . $row["password"] . "</td>
                     <td style='background-color: #FFFFFF;'>" . $row["surname"] . "</td>
                     <td style='background-color: #FFFFFF;'>" . $row["name_user"] . "</td>
                     <td style='background-color: #FFFFFF;'>" . $row["patronymic"] . "</td>

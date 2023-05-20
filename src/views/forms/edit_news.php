@@ -20,7 +20,7 @@
                     <label for="editDate">Дата</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <button name="update_news" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Редактировать запись</button>
+                    <button id="update_news" name="update_news" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Редактировать запись</button>
                 </div>
             </form>
         </div>

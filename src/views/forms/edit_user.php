@@ -28,7 +28,7 @@
                     <label for="editPatronymic">Отчество</label>
                 </div>
                 <div class="form-floating mb-3">
-                <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Редактировать запись</button>
+                <button id="edit_users" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Редактировать запись</button>
                 </div>
             </form>
         </div>

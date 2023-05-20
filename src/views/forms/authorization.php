@@ -7,11 +7,11 @@
         <div class="modal-body p-5 pt-0">
             <form action="../../src/controllers/check_login.php" method="POST">
             <div class="form-floating mb-3">
-                <input name="login" type="textarea" class="form-control rounded-3" placeholder="Логин">
+                <input name="login" type="textarea" class="form-control rounded-3" placeholder="Логин" required>
                 <label for="login">Логин</label>
             </div>
             <div class="form-floating mb-3">
-                <input name="password" type="password" class="form-control rounded-3" placeholder="Пароль">
+                <input name="password" type="password" class="form-control rounded-3" placeholder="Пароль" required>
                 <label for="password">Пароль</label>
             </div>
             <div class="form-floating mb-3">

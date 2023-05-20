@@ -1,5 +1,6 @@
-*{
+* table{
   outline: none;
+  width: 80%!important;
 }
 
 a{
@@ -90,7 +91,7 @@ body {
 
 /* Стиль для таблицы */
 table {
-  width: 100%;
+  width: 80%;
   margin-bottom: 20px;
   background-color: antiquewhite;
   border-radius: 20px;
@@ -121,6 +122,14 @@ th {
 
 .th_head{
   font-weight: normal!important;
+}
+
+table.dataTable {
+  width: 80%!important;
+  margin: 0 auto;
+  clear: both;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 .edit-row {
@@ -263,10 +272,55 @@ button.buttons-pdf {
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
-  margin-top: 3%;
+  margin-top: 1%;
   margin-left: 5%;
 }
 
 button.buttons-pdf:hover {
   background-color: #d6a86c;
+}
+
+.p-5 {
+  padding: 1rem!important;
+}
+
+#news, #add-row-btn, #add-row-btn5, #openCreateUserModalBtn{
+  background-color: #a06623;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 3%;
+  margin-left: 9.5%;
+
+}
+
+#news_block{
+  margin: auto;
+  margin-top: 5%;
+}
+
+#signIn, #add_news, #update_news, #edit_users{
+  background-color: #d6a86c;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+}
+
+#createUserModalContent, #news_block_title{
+  background-color: #ffedd7;
+  color: #6b3d08;
+}
+
+#signIn:hover, #add_news:hover, #update_news:hover, #edit_users:hover{
+  background-color: #a06623;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+}
+
+#news:hover, #add-row-btn:hover, #add-row-btn5:hover, #openCreateUserModalBtn{
+  background-color: #d6a86c;
+  color: white;
 }

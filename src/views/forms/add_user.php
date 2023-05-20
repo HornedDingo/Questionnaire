@@ -1,4 +1,4 @@
-<button id="openCreateUserModalBtn" name="openModalBtn" type="button" class="btn btn-outline-primary me-2">Добавить</button>
+<button id="openCreateUserModalBtn" name="openModalBtn" type="button" class="btn btn-outline-primary me-2">Добавить пользователя</button>
 <div id="createUserModal" class="popup-bg">
     <div id="createUserModalContent" class="popup">
         <div class="modal-header p-5 pb-4 border-bottom-0">
