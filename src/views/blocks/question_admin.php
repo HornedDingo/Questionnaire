@@ -47,6 +47,48 @@ error_reporting(E_ALL);
     });
 </script>
 <script>
+    $(document).ready(function() {
+        $('#add-question-form').submit(function(event) {
+        event.preventDefault();
+        var formData = $(this).serialize();
+
+        $.ajax({
+            type: 'POST',
+            url: '../../src/functions/add_question.php',
+            data: formData,
+            success: function(response) {
+            alert(response);
+            window.location.reload();
+            },
+            error: function() {
+            alert('Ошибка при отправке данных.');
+            }
+        });
+        });
+    });
+
+    $(document).on("click", ".delete-row", function() {
+        var row = $(this).closest("tr");
+        var id = row.find("td:eq(0)").text();
+        $.ajax({
+            url: "../functions/delete_question.php",
+            method: "POST",
+            data: { id: id },
+            success: function() {
+            row.remove();
+            alert("Запись удалена");
+            },
+            success: function(response) {
+              alert(response);
+              window.location.reload();
+            },
+            error: function() {
+            alert("Ошибка удаления записи");
+            }
+        });
+    });    
+</script>
+<script>
     var addForm = document.getElementById("add-form");
 
     var btn = document.getElementById("add-row-btn5");

@@ -32,7 +32,7 @@
             "defaultContent":"",
             "className": "dt-right",
             "render":function(data,type,row){
-                return '<button class="delete-row">Удалить</button><button class="edit-row">Редактировать</button>'
+                return '<button class="delete-row">Удалить</button>'
             }
             }]
         });
@@ -96,9 +96,9 @@
       <button id="add-row-cancel" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="hideEditForm()"></button>
     </div>
     <div class="modal-body p-5 pt-0">
-      <form id="edit-poll-form" action="../../functions/add_poll.php" method="post">
+      <form id="edit-poll-form" action="../../functions/edit_poll.php" method="post">
         <div class="form-floating mb-3">
-          <input type="hidden" id="edit-poll-id" name="add-poll-id" value="">
+          <input type="hidden" id="edit-poll-id" name="edit-poll-id" value="">
           <input type="text" id="edit_name_poll" name="edit_name_poll" value="" class="form-control rounded-3" placeholder="Заголовок">
           <label for="edit_name_poll">Наименование</label>
         </div>
@@ -111,7 +111,7 @@
           <label for="edit_description_poll">Описание</label>
         </div>
         <div class="form-floating mb-3">
-          <select id="edit_status" name="status">
+          <select id="edit_status" name="edit_status">
             <option value="1">Завершено</option>
             <option value="2">Открыт</option>
             <option value="3">Планируется</option>
@@ -124,6 +124,29 @@
     </div>
   </div>
 </div>
+
+<script>
+    $(document).on("click", ".delete-row", function() {
+        var row = $(this).closest("tr");
+        var id = row.find("td:eq(0)").text();
+        $.ajax({
+            url: "../functions/delete_poll.php",
+            method: "POST",
+            data: { id: id },
+            success: function() {
+            row.remove();
+            alert("Запись удалена");
+            },
+            success: function(response) {
+              alert(response);
+              window.location.reload();
+            },
+            error: function() {
+            alert("Ошибка удаления записи");
+            }
+        });
+    });    
+</script>
 
 <script>
   $(document).ready(function() {
@@ -145,6 +168,21 @@
       });
     });
   });
+
+  var modal = document.getElementById('createUserModal');
+  var openModalBtn = document.getElementById('openCreateUserModalBtn');
+  var closeModalBtn = document.getElementById('closeModalBtn');
+  openModalBtn.onclick = function() {
+      modal.style.display = 'block';
+  }
+  closeModalBtn.onclick = function() {
+      modal.style.display = 'none';
+  }
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = 'none';
+      }
+  }
 </script>
 
 <script>
@@ -162,44 +200,4 @@
       addRowModal.style.display = "none";
     }
   }
-
-  function showEditForm(id, name, description, result, status_id) {
-      document.getElementById("edit-id-poll").value = id;
-      document.getElementById("edit_name_poll").value = name;
-      document.getElementById("edit_main_result").value = description;
-      document.getElementById("edit_description_poll").value = result;
-      document.getElementById("edit_status").value = status_id;
-      document.getElementById("edit-row-modal").style.display = "block";
-  }
-
-  $(document).ready(function() {
-      $(document).on("click", ".edit-row", function() {
-      var id = $(this).closest("tr").find("td:eq(0)").text();
-      var name = $(this).closest("tr").find("td:eq(1)").text();
-      var description = $(this).closest("tr").find("td:eq(3)").text();
-      var result = $(this).closest("tr").find("td:eq(2)").text();
-      var status_id = $(this).closest("tr").find("td:eq(4)").text();
-      showEditForm(id, name, description, result, status_id);
-      });
-  });
-
-  $(document).ready(function() {
-      $(document).on("click", ".delete-row", function() {
-          var id = $(this).closest("tr").find("td:eq(0)").text();
-          var confirmDelete = confirm("Вы уверены, что хотите удалить эту запись?");
-          if(confirmDelete) {
-              $.ajax({
-              url: "../functions/delete_poll.php",
-              type: "POST",
-              data: {id: id},
-              success: function(response) {
-                  if (response == "success") {
-                  $(this).closest("tr").remove();
-                  window.location.reload();
-                  }
-              }
-              });
-          }
-      });
-  });
 </script>

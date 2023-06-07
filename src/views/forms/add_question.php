@@ -4,30 +4,15 @@
       <h1 class="fw-bold mb-0 fs-2" style="margin: auto;">Добавить вопрос</h1> 
       <button id="closeModalBtn" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="hideEditForm()"></button> 
     </div> 
-    <form id="add-question-form" method="post" action=""> 
+    <form id="add-question-form" method="post" action="../../../src/functions/add_question.php"> 
       <div class="form-floating mb-3"> 
-        <input type="hidden" id="add-question-id" name="add-news-id" value=""> 
+        <input type="hidden" id="add-question-id" name="add-question-id" value=""> 
         <textarea id="add-name-question" name="add-name-question" value="" class="form-control rounded-3" placeholder="Вопрос"></textarea> 
         <label for="add-name-questione">Вопрос</label> 
       </div> 
       <div class="form-group"> 
-        <label for="add-role"></label> 
-        <select class="form-control" id="add-role" name="add_role" class="form-control rounded-3" required> 
-        <?php 
-          connectDB(); 
-          $result = $mysqli->query("SELECT ID_role, name_role FROM role"); 
-          if (mysqli_num_rows($result) > 0) { 
-            while($row = mysqli_fetch_assoc($result)) { 
-              echo "<option value='" . $row['ID_role'] . "'>" . $row['name_role'] . "</option>"; 
-            } 
-          } 
-          closeDB(); 
-        ?> 
-        </select> 
-      </div> 
-      <div class="form-group"> 
-        <label for="add-poll"></label> 
-        <select class="form-control" id="add-poll" name="add_poll" class="form-control rounded-3" required> 
+        <label for="add_poll"></label> 
+        <select class="form-control" id="add_poll" name="add_poll" class="form-control rounded-3" required> 
         <?php 
           connectDB(); 
           $result = $mysqli->query("SELECT ID_poll, name_poll FROM poll"); 

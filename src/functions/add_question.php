@@ -1,23 +1,13 @@
 <?php
-$mysqli = new mysqli("localhost", "root", "root", "questionnare_db");
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+  $conn = mysqli_connect("localhost", "root", "", "questionnare_db", 3307);
+      
+  $name_question = $_POST['add-name-question'];
+  $poll_ID = $_POST['add_poll'];
 
-if ($mysqli->connect_errno) {
-  echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-  exit();
-}
+  $sql = "INSERT INTO question(name_question, poll_ID) VALUES ('$name_question', '$poll_ID')";
+  mysqli_query($conn, $sql);
 
-$question = mysqli_real_escape_string($mysqli, $_POST['question']);
-$role = (int) $_POST['role'];
-$poll = (int) $_POST['poll'];
-
-$sql = "INSERT INTO question (name_question, role_ID, poll_ID) VALUES ('$question', $role, $poll)";
-
-$result = mysqli_query($mysqli, $sql);
-
-if (!$result) {
-  echo "Failed to add question: " . mysqli_error($mysqli);
-  exit();
-}
-
-mysqli_close($mysqli);
+  mysqli_close($conn);
 ?>

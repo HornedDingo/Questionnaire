@@ -64,7 +64,6 @@
         });   
     }
 
-    //спрашиваем подтверждение удаления новости
     $('#myTable2 tbody').on('click', 'button.delete-row', function() {
         var data = $('#myTable2').DataTable().row($(this).parents('tr')).data();
         var id = data[0];
@@ -74,7 +73,6 @@
         }
     });
 
-    //функция для удаления новости
     $(document).on("click", ".delete-row", function() {
         var row = $(this).closest("tr");
         var id = row.find("td:eq(0)").text();
@@ -92,7 +90,6 @@
         });
     });    
 
-    //функция для заполнения формы редактирования
     $(document).ready(function() {
         $('.datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
         $('.edit-row').click(function() {
@@ -107,13 +104,11 @@
         });
     });
 
-    //функция для закрытия формы редактирования
     function hideEditForm() {
         $('#edit-form').hide();
         $('#add-form').hide();
     }
 
-    //функция для открытия формы создания новой записи
     function showAddForm(){
         $('#add-form').show();
     }

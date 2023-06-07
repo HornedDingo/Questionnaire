@@ -1,8 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '0');
 $conn = mysqli_connect("localhost", "root", "", "questionnare_db", 3307);
-    
+
 $name_poll = $_POST['name_poll'];
 $main_result = $_POST['main_result'];
 $description_poll = $_POST['description_poll'];
