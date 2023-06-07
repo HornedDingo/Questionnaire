@@ -24,12 +24,10 @@
   </head>
   <body>
     <?php
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
         require_once dirname(__DIR__) . '../functions/function.php';
         $selected_poll_id = $_GET["poll_id"];
         connectDB();
+        $user_id = $user.
         $poll_stmt = $mysqli->prepare("SELECT ID_poll, name_poll FROM poll WHERE ID_poll = ?");
         $poll_stmt->bind_param("i", $selected_poll_id);
         $poll_stmt->execute();
@@ -54,7 +52,6 @@
                     while ($question = mysqli_fetch_assoc($question_result)) {
                         echo '<div style="margin-bottom:1%;" class="list-group-item list-group-item-action py-3" aria-current="true">
                         ';
-                        // Скрытый input для передачи выбранного ID опроса
                         echo "<input type='hidden' name='poll_id' value='" . $selected_poll_id . "'>";
                         echo "<h3> " . $question['name_question'] . "</h3>";
                         echo "</h3>";
@@ -68,7 +65,6 @@
                         }
                         echo "</div>";
                     }
-                    // Кнопка для отправки формы с ответами
                     echo "<button type='submit' style='
                         background-color: #d6a86c;
                         color: white;

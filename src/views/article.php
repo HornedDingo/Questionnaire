@@ -4,10 +4,15 @@
     <body>
     <div class="container" style="background: antiquewhite; margin-top: 3rem; width: 50%;">
             <h1 style="color: #d6a86c; font-family: ui-sans-serif; text-align: center;">Новости и объявления</h1>
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2" style=" justify-content: center; margin: auto;">
+                    <hr class="featurette-divider" style="color: #d6a86c; height:2px;">
+                </div>
+            </div>
             <div id="polls">
             <ul style="margin-right: 2rem!important; margin: auto;margin-top:3%;">
                 <?php
-                    require_once dirname(__DIR__) . '../functions/function.php';
+                    require_once dirname(__DIR__) . '/functions/function.php';
                     $news_array = getAllNews();
                     foreach ($news_array as $news_item) {
                         $news_description = getNewsDetails($news_item["ID_news"]);
@@ -29,3 +34,4 @@
         </div>
     </body>
 </html>
+

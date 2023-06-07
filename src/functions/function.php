@@ -1,5 +1,6 @@
 <?php
     require_once dirname(__DIR__) . '/db/connection.php'; 
+    require_once dirname(__DIR__) . '/models/user.php'; 
     function getNews($limit)
     {
         global $mysqli;
@@ -77,15 +78,6 @@
       return $news_array;
     }
 
-    // function getSmthFromTableById($column_name, $data)
-    // {
-    //   global $mysqli;
-    //   connectDB();
-    //   $result = $mysqli->query("SELECT * FROM poll WHERE $column_name = '$data'");
-    //   $news_array = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    //   closeDB();
-    //   return $news_array;
-    // }
 
     function getSmthFromTableById($column_name, $id) {
         global $mysqli;
@@ -123,5 +115,36 @@
             $array[] = $row;
         }
         return $array;
+    }
+
+    function get5ApplicationsVisit($id_user)
+    {
+        global $mysqli;
+        connectDB();
+        $id = $id_user;
+        $result = $mysqli->query("SELECT * FROM application_for_a_visit WHERE user_ID = $id ORDER BY ID_application_for_a_visit DESC LIMIT 5;");
+        $news_array = resultToArray($result);
+        closeDB();
+        return $news_array;
+    }
+
+    function get5ApplicationsEntry($id_user)
+    {
+      global $mysqli;
+      $id = $id_user;
+      connectDB();
+      $result = $mysqli->query("SELECT * FROM application_for_a_vehicle WHERE user_ID = $id ORDER BY ID_application_for_a_vehicle DESC LIMIT 5;");
+      $news_array = resultToArray($result);
+      closeDB();
+      return $news_array;
+    }
+
+    function getApplicationStatus($id_status){
+      global $mysqli;
+      connectDB();
+      $result = $mysqli->query("SELECT * FROM application_status WHERE ID_application_status = $id_status;");
+      $news_array = mysqli_fetch_all($result, MYSQLI_ASSOC);
+      closeDB();
+      return $news_array;
     }
 ?>

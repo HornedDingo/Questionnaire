@@ -1,8 +1,11 @@
 <?php
 if(isset($_GET['page'])) {
     switch($_GET['page']) {
-        case "news":
+        case "news_edit":
             include("news_admin.php");
+            break;
+        case "news_read":
+            include("news_read.php");
             break;
         case "polls":
             include("poll_admin.php");

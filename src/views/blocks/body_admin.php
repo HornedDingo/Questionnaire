@@ -7,6 +7,15 @@ if(isset($_GET['page'])) {
         case "news_read":
             include("news_read.php");
             break;
+        case "my_applications":
+            include("my_applications.php");
+            break;
+        case "applications_entry":
+            include("applications_entry.php");
+            break;
+        case "applications_visit":
+            include("applications_visit.php");
+            break;
         case "users":
             include("users_admin.php");
             break;
