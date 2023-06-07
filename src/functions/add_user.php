@@ -9,8 +9,8 @@
         $surname = $_POST['surname'];
         $name = $_POST['name'];
         $patronymic = $_POST['patronymic'];
-
-        $result = $mysqli->query("INSERT INTO user (login, password, surname, name_user, patronymic) VALUES ('$login', '$password', '$surname', '$name', '$patronymic')");
+        $role_ID = $_POST['role_ID'];
+        $result = $mysqli->query("INSERT INTO user (login, password, surname, name_user, patronymic, role_ID) VALUES ('$login', '$password', '$surname', '$name', '$patronymic', $role_ID)");
 
         if ($result) {
             echo "Запись была успешно добавлена в базу данных!";

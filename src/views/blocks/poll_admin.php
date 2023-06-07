@@ -1,5 +1,4 @@
 <?php require_once dirname(__DIR__) . '../tables/polls.php';?>
-<?php require_once dirname(__DIR__) . '../../functions/add_poll.php';?>
 <?php require_once dirname(__DIR__) . '../../functions/add_row.php';?>
 <script>
     $(document).ready(function() {
@@ -39,7 +38,6 @@
         });
     });
 
-    //функция для открытия формы создания новой записи
     function showAddForm(){
         $('#add_poll_form').show();
     }
@@ -69,10 +67,18 @@
           <label for="description_poll">Описание</label>
         </div>
         <div class="form-floating mb-3">
-          <select id="status" name="status">
-            <option value="1">Открыто</option>
-            <option value="2">Закрыто</option>
-            <option value="3">Отменено</option>
+          <select id="role_ID" name="role_ID">
+            <option value="1">Администратор</option>
+            <option value="2">Модератор</option>
+            <option value="3">Житель</option>
+            <option value="4">Охранник</option>
+          </select>
+        </div>
+        <div class="form-floating mb-3">
+          <select id="status_id" name="status_id">
+            <option value="1">Завершено</option>
+            <option value="2">Открыт</option>
+            <option value="3">Планируется</option>
           </select>
         </div>
         <div class="form-floating mb-3">
@@ -106,9 +112,9 @@
         </div>
         <div class="form-floating mb-3">
           <select id="edit_status" name="status">
-            <option value="1">Открыто</option>
-            <option value="2">Закрыто</option>
-            <option value="3">Отменено</option>
+            <option value="1">Завершено</option>
+            <option value="2">Открыт</option>
+            <option value="3">Планируется</option>
           </select>
         </div>
         <div class="form-floating mb-3">
@@ -118,6 +124,28 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function() {
+    $('#add-poll-form').submit(function(event) {
+      event.preventDefault();
+      var formData = $(this).serialize();
+
+      $.ajax({
+        type: 'POST',
+        url: '../../src/functions/add_poll.php',
+        data: formData,
+        success: function(response) {
+          alert(response);
+          window.location.reload();
+        },
+        error: function() {
+          alert('Ошибка при отправке данных.');
+        }
+      });
+    });
+  });
+</script>
 
 <script>
   var addRowModal = document.getElementById("add-row-modal");
@@ -135,72 +163,43 @@
     }
   }
 
+  function showEditForm(id, name, description, result, status_id) {
+      document.getElementById("edit-id-poll").value = id;
+      document.getElementById("edit_name_poll").value = name;
+      document.getElementById("edit_main_result").value = description;
+      document.getElementById("edit_description_poll").value = result;
+      document.getElementById("edit_status").value = status_id;
+      document.getElementById("edit-row-modal").style.display = "block";
+  }
+
   $(document).ready(function() {
-    $('#add-poll-form').submit(function(event) {
-      // Отменяем отправку формы по умолчанию
-      event.preventDefault();
-
-      // Получаем значения полей формы
-      var name_poll = $('#name_poll').val();
-      var main_result = $('#main_result').val();
-      var description_poll = $('#description_poll').val();
-      var status_id = $('#status').val();
-
-      // Отправляем данные на сервер методом POST
-      $.ajax({
-        type: 'POST',
-        url: '../functions/add_poll.php',
-        data: {
-          name_poll: name_poll,
-          main_result: main_result,
-          description_poll: description_poll,
-          status_id: status_id
-        },
-        success: function(response) {
-          // Если сервер вернул успешный ответ, перезагружаем страницу
-          window.location.reload();
-        }
+      $(document).on("click", ".edit-row", function() {
+      var id = $(this).closest("tr").find("td:eq(0)").text();
+      var name = $(this).closest("tr").find("td:eq(1)").text();
+      var description = $(this).closest("tr").find("td:eq(3)").text();
+      var result = $(this).closest("tr").find("td:eq(2)").text();
+      var status_id = $(this).closest("tr").find("td:eq(4)").text();
+      showEditForm(id, name, description, result, status_id);
       });
-    });
   });
 
-    function showEditForm(id, name, description, result, status_id) {
-        document.getElementById("edit-id-poll").value = id;
-        document.getElementById("edit_name_poll").value = name;
-        document.getElementById("edit_main_result").value = description;
-        document.getElementById("edit_description_poll").value = result;
-        document.getElementById("edit_status").value = status_id;
-        document.getElementById("edit-row-modal").style.display = "block";
-    }
-
-    $(document).ready(function() {
-        $(document).on("click", ".edit-row", function() {
-        var id = $(this).closest("tr").find("td:eq(0)").text();
-        var name = $(this).closest("tr").find("td:eq(1)").text();
-        var description = $(this).closest("tr").find("td:eq(3)").text();
-        var result = $(this).closest("tr").find("td:eq(2)").text();
-        var status_id = $(this).closest("tr").find("td:eq(4)").text();
-        showEditForm(id, name, description, result, status_id);
-        });
-    });
-
-    $(document).ready(function() {
-        $(document).on("click", ".delete-row", function() {
-            var id = $(this).closest("tr").find("td:eq(0)").text();
-            var confirmDelete = confirm("Вы уверены, что хотите удалить эту запись?");
-            if(confirmDelete) {
-                $.ajax({
-                url: "../functions/delete_poll.php",
-                type: "POST",
-                data: {id: id},
-                success: function(response) {
-                    if (response == "success") {
-                    $(this).closest("tr").remove();
-                    window.location.reload();
-                    }
-                }
-                });
-            }
-        });
-    });
+  $(document).ready(function() {
+      $(document).on("click", ".delete-row", function() {
+          var id = $(this).closest("tr").find("td:eq(0)").text();
+          var confirmDelete = confirm("Вы уверены, что хотите удалить эту запись?");
+          if(confirmDelete) {
+              $.ajax({
+              url: "../functions/delete_poll.php",
+              type: "POST",
+              data: {id: id},
+              success: function(response) {
+                  if (response == "success") {
+                  $(this).closest("tr").remove();
+                  window.location.reload();
+                  }
+              }
+              });
+          }
+      });
+  });
 </script>

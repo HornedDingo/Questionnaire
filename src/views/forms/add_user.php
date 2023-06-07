@@ -28,6 +28,14 @@
                     <label for="patronymic">Отчество</label>
                 </div>
                 <div class="form-floating mb-3">
+                    <select id="role_ID" name="role_ID">
+                        <option value="1">Администратор</option>
+                        <option value="2">Модератор</option>
+                        <option value="3">Житель</option>
+                        <option value="4">Охранник</option>
+                    </select>
+                </div>
+                <div class="form-floating mb-3">
                     <p id="fail"></p>
                 </div>
                 <button id="signIn" name="add_user" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Добавить запись</button>
