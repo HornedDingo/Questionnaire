@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_ALL); 
     require_once dirname(__DIR__) . '../functions/function.php';
     connectDB();
     if (isset($_POST['id'])) {

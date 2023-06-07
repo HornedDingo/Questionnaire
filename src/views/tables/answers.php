@@ -31,7 +31,7 @@
                     $result2 = $stmt->get_result();
                     $details = mysqli_fetch_assoc($result2);
                     echo "<tr>
-                            <td style='display: none;'>" . $row["ID_question"] . "</td>
+                            <td style='display: none;'>" . $row["ID_answer"] . "</td>
                             <td style='background-color: #FFFFFF; width:30%'>" . $row["name_answer"] . "</td>
                             <td style='background-color: #FFFFFF; width:5%'>" . $row["votes"] . "</td>
                             <td style='background-color: #FFFFFF; width:50%'>" . $details["name_question"] ."</td>
