@@ -2,16 +2,16 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+session_start();
 ?>
 <?php
     require_once dirname(__DIR__) . '../functions/function.php';
 
-    $user_id = 1; // ID текущего пользователя, необходимо получать из сессии или другого источника
+    $user_id = $_SESSION["ID_user"];
     $poll_id = $_POST["poll_id"];
 
     connectDB();
 
-    // Выборка вопросов опроса
     $question_stmt = $mysqli->prepare("SELECT ID_question FROM question WHERE poll_ID = ?");
     $question_stmt->bind_param("i", $poll_id);
     $question_stmt->execute();
@@ -22,11 +22,9 @@ error_reporting(E_ALL);
     $result_stmt->bind_param("ii", $user_id, $poll_id);
     $result_stmt->execute();
 
-    // Обработка ответов пользователя
     while ($question = mysqli_fetch_assoc($question_result)) {
         $answer_id = $_POST["answer_" . $question['ID_question']];
 
-        // Вставка результата ответа в базу данных
         $result_smth = $mysqli->prepare("SELECT votes FROM answer WHERE ID_answer = ?");
         $result_smth->bind_param("i", $answer_id);
         $result_smth->execute();
@@ -39,6 +37,5 @@ error_reporting(E_ALL);
 
     closeDB();
 
-    // Перенаправление на страницу с благодарностью за участие в опросе или на другую страницу 
     header("Location: user_page.php?page=poll");
 ?>

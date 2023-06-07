@@ -16,6 +16,9 @@ if(isset($_GET['page'])) {
         case "answers":
             include("answer_admin.php");
             break;
+        case "application":
+            include("users_applications.php");
+            break;
         default:
             include("news_admin.php");
             break;

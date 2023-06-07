@@ -9,7 +9,6 @@ function displayPolls(polls) {
     pollDiv.innerHTML = '';
 
     polls.forEach(poll => {
-        // Создаем элементы для отображения опроса
         const pollEl = document.createElement('div');
         pollEl.className = 'poll';
         const titleH3 = document.createElement('h3');
@@ -25,7 +24,6 @@ function displayPolls(polls) {
             questionDiv.className = 'question';
             questionDiv.id = `question-${question.ID_question}`;
         
-            // Добавляем текст вопроса
             const questionText = document.createElement('h4');
             questionText.textContent = question.question_text;
             questionDiv.appendChild(questionText);
@@ -70,6 +68,4 @@ async function submitForm(event) {
     alert('Ваш голос защитан! Спасибо за участие.');
 }
 
-
-// Загрузка данных при инициализации страницы
 loadData();

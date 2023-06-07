@@ -27,7 +27,6 @@
         require_once dirname(__DIR__) . '../functions/function.php';
         $selected_poll_id = $_GET["poll_id"];
         connectDB();
-        $user_id = $user.
         $poll_stmt = $mysqli->prepare("SELECT ID_poll, name_poll FROM poll WHERE ID_poll = ?");
         $poll_stmt->bind_param("i", $selected_poll_id);
         $poll_stmt->execute();

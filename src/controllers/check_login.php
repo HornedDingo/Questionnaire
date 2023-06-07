@@ -45,6 +45,10 @@
                 header('Location: ../views/moderator_page.php?page=news_read');
                 exit();
             }
+            elseif ($_user['role_ID'] === 4){
+                header('Location: ../views/guards_page.php?page=news_read');
+                exit();
+            }
             else{
                 header('Location: ../views/user_page.php?page=news_read');
                 exit();

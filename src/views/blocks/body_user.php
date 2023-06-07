@@ -1,14 +1,14 @@
 <?php
 if(isset($_GET['page'])) {
     switch($_GET['page']) {
-        case "news":
+        case "news_read":
             include("article.php");
             break;
         case "poll":
             include("polling.php");
             break;
         case "application":
-            include("polling.php");
+            include("users_applications.php");
             break;
     }
 }
