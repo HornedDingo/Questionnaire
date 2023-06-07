@@ -11,14 +11,13 @@
         $stmt->bind_param("ss", $login, $password);
         $stmt->execute();
 
-        // Получение пользователя из результатов запроса
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
 
         if ($user !== null) {
             $_SESSION['loggedIn'] = true;
             if ($user['role_ID'] === 1){
-                header('Location: ../views/admin_page.php');
+                header('Location: ../views/admin_page.php?page=news_read');
                 exit();
             }
             elseif ($user['role_ID'] === 2){

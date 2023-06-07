@@ -17,12 +17,13 @@
                 </li>
             </ul>
             <p id="footer_route">Для того, чтобы добраться используйте: 
-                <br> - автобус 367 (ЖК "Пригород Лесное") 
-                <br> - маршрутки 871к (ЖК "Пригород Лесное")
+                <br> - автобус 288 до остановки «МЦД Щербинка»;
+                <br> - МЦД-2 до станции «Подольск»;
+                <br> - маршрутка 59 (до остановки «Макарово»).
             </p>
         </div>
         <div class="block" style="overflow:hidden;">
-            <iframe id="yandex_frame" src="https://yandex.ru/map-widget/v1/?ll=37.812282%2C55.557108&mode=search&oid=182958830895&ol=biz&z=16.57" frameborder="1" allowfullscreen="true"></iframe>
+            <iframe id="yandex_frame" src="https://yandex.ru/map-widget/v1/?ll=37.664204%2C55.455660&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzIxMDMzOBK0AdCg0L7RgdGB0LjRjywg0JzQvtGB0LrQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCz0L7RgNC-0LTRgdC60L7QuSDQvtC60YDRg9CzINCU0L7QvNC-0LTQtdC00L7QstC-LCDQtNC10YDQtdCy0L3RjyDQl9Cw0LHQvtC70L7RgtGM0LUsINCU0J3QnyDQodC10YDQtdCx0YDRj9C90LDRjyDQn9C-0LTQutC-0LLQsCIKDR6pFkIVTNJdQg%2C%2C&z=15.92" allowfullscreen="true"></iframe>
         </div>
     </div>
 </footer>

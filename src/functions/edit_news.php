@@ -15,7 +15,7 @@
         $stmt2->execute();
         $stmt2->close();
         echo "Запись была успешно обновлена в базе данных!";
-        header('Location: ../views/admin_page.php?page=news');
+        header('Location: ../views/admin_page.php?page=news_read');
     }
     closeDB();
 ?>

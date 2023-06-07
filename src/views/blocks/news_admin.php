@@ -1,3 +1,13 @@
+<div class="row featurette">
+    <div class="col-md-7 order-md-2" style=" justify-content: center; margin: auto;">
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style="margin-top: 2%;">
+            <li><a href="?page=news_read" id="header_link_2" class="nav-link">Страница просмотра</a></li>
+            <li><a href="?page=news_edit" id="header_link_2" class="nav-link">Страница редактирования</a></li>
+        </ul>
+        <hr class="featurette-divider" style="color: #d6a86c; height:2px;">
+    </div>
+</div>
+
 <?php require_once dirname(__DIR__) . '../tables/news.php';?>
 <?php require_once dirname(__DIR__) . '../forms/edit_news.php';?>
 <?php require_once dirname(__DIR__) . '../forms/add_news.php';?>

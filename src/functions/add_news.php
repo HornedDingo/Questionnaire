@@ -12,9 +12,9 @@
         $stmt->execute();
         $news_id = $stmt->insert_id;
         $stmt->close();
-
-        $stmt2 = $mysqli->prepare("INSERT INTO news_details (news_ID, description_news) VALUES (?, ?)");
-        $stmt2->bind_param("is", $news_id, $description);
+        $account_ID = 1;
+        $stmt2 = $mysqli->prepare("INSERT INTO news_details (news_ID, description_news, user_ID) VALUES (?, ?, ?)");
+        $stmt2->bind_param("isi", $news_id, $description, $account_ID);
         $stmt2->execute();
         $stmt2->close();
 
@@ -23,7 +23,7 @@
         } else {
             echo "Не удалось добавить новую запись в базу данных!";
         }
-        header('Location: ../views/admin_page.php?page=news');
+        header('Location: ../views/admin_page.php?page=news_read');
     }
     closeDB();
 ?>

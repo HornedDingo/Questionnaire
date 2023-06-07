@@ -16,7 +16,7 @@
                     <label for="add-news-description">Содержание</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" id="addDate" name="date_of_addition" value="" class="form-control rounded-3 datepicker" placeholder="Дата">
+                    <input type="text" id="addDate" name="date_of_addition" data-open-on="today" value="" class="form-control rounded-3 datepicker">
                     <label for="addDate">Дата</label>
                 </div>
                 <div class="form-floating mb-3">

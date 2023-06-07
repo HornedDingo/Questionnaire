@@ -7,6 +7,9 @@ if(isset($_GET['page'])) {
         case "poll":
             include("polling.php");
             break;
+        case "application":
+            include("polling.php");
+            break;
     }
 }
 ?>

@@ -6,20 +6,20 @@
       </div>
       <div class="carousel-inner">
           <div class="carousel-item active">
-              <img src="/src/assets/img/imgonline-com-ua-Resize-pL44yPT49vhn9DW.png" alt="ЖК Пригород Лесное" width="100%" height="10%">
+              <img src="/src/assets/img/жк_1.jpg" alt="Серебряная подкова" width="100%" height="110%">
               <div class="container">
                   <div class="carousel-caption text-start">
                       <h1>Расположение</h1>
-                      <p>Пригород лесное - район с высоким уровнем экологии.</p>
+                      <p>Наш коттеджный поселок - район с высоким уровнем экологии.</p>
                   </div>
               </div>
           </div>
           <div class="carousel-item">
-              <img src="/src/assets/img/seventh_photo.jpg" alt="ЖК Пригород Лесное" width="100%" height="50%">
+              <img src="/src/assets/img/жк_3.png" alt="Серебряная подкова" width="100%" height="50%">
               <div class="container">
                   <div class="carousel-caption">
                       <h1>Транспортная доступность</h1>
-                      <p>Расположение в 15 минутах от м. «Домодедовская».</p>
+                      <p>Расположение в 30 минутах от м. «Бунинская аллея».</p>
                   </div>
               </div>
           </div>
@@ -31,46 +31,46 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </button>
   </div>
-  <div class="container px-4 py-5" id="icon-grid">
-          <h2 class="pb-2 border-bottom">Преимущества жизни в ЖК Пригород Лесное</h2>
+  <div class="container px-4 py-5" id="properties">
+          <h2 class="pb-2 border-bottom">Преимущества жизни в «Серебряной Подкове»</h2>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
             <div class="col d-flex align-items-start">
-              <img id="icon" src="src/assets/icons/car-front-fill.svg" alt="Машина">
+              <img id="icon" src="src/assets/icons/book-half.svg" alt="Услуги">
               <div>
-                <h3 class="fw-bold mb-0 fs-4">Парковочные места</h3>
-                <p>На территории ЖК расположено большое количество стоянок для личных автомобилей.</p>
+                <h3 class="fw-bold mb-0 fs-4">Дополнительные услуги</h3>
+                <p>Для вашего удобства мы предоставляем услуги по уходу за участком, подключением воды и др.</p>
               </div>
             </div>
             <div class="col d-flex align-items-start">
               <img id="icon" src="src/assets/icons/geo-alt-fill.svg" alt="Местоположение">
               <div>
                 <h3 class="fw-bold mb-0 fs-4">Местоположение</h3>
-                <p>Находимся близко к м. «Домодедовская», «Зябликово» и «Красногвардейская». Время езды не более 15 минут.</p>
+                <p>Находимся близко к м. «Улица Скобелевская», «Бульвар Адмирала Ушакова» и «Бунинская аллея». Время езды не более 30 минут.</p>
               </div>
             </div>
             <div class="col d-flex align-items-start">
               <img id="icon" src="src/assets/icons/globe-europe-africa.svg" alt="Экология">
               <div>
                 <h3 class="fw-bold mb-0 fs-4">Экологичность района</h3>
-                <p>Жилой комплекс окружен небольшим лесом и просторными полями, вдалеке от различных заводов и фабрик..</p>
+                <p>Жилой комплекс окружен просторными полями и омывается речкой Пахра.</p>
               </div>
             </div>
             <div class="col d-flex align-items-start">
               <img id="icon" src="src/assets/icons/heart-pulse.svg" alt="Активность">
               <div>
                 <h3 class="fw-bold mb-0 fs-4">Здоровье и спорт</h3>
-                <p>На территории комплекса построено много беговых дорожек, спортивных площадок и фитнес-центров.</p>
+                <p>На территории комплекса построено много беговых дорожек, спортивных площадок и аллей.</p>
               </div>
             </div>
             <div class="col d-flex align-items-start">
-              <img id="icon" src="src/assets/icons/book-half.svg" alt="Библиотека">
+              <img id="icon" src="src/assets/icons/person-check-fill.svg" alt="Безопасность">
               <div>
-                <h3 class="fw-bold mb-0 fs-4">Библиотека</h3>
-                <p>Для студентов, школьников и просто любителей литературы была обустроена библиотека.</p>
+                <h3 class="fw-bold mb-0 fs-4">Безопасность</h3>
+                <p>Коттеджный посёлок включает в себя два контрольно-пропускных пункта для охраны территории от посторонних лиц. </p>
               </div>
             </div>
             <div class="col d-flex align-items-start">
-              <img id="icon" src="src/assets/icons/messenger.svg" alt="Мессенжер">
+              <img id="icon" src="src/assets/icons/messenger.svg" alt="Мессенджер">
               <div>
                 <h3 class="fw-bold mb-0 fs-4">Всегда на связи</h3>
                 <p>Для вашего удобства используйте наш Telegram-канал для оперативного общения с администрацией.</p>
@@ -79,14 +79,14 @@
           </div>
         </div>
   <hr class="featurette-divider">
-  <div class="row featurette" id="descriptionn">
+  <div class="row featurette" id="description">
       <div class="col-md-7">
           <h2 class="featurette-heading fw-normal lh-1">О жилом комплексе</h2>
-          <p class="lead">«Пригород Лесное» — жилой комплекс, в котором ценят разнообразие сценариев для жизни и отдыха. Одновременно удачное расположение квартала на юго-востоке Московской области — в 7 км от МКАД — и природное окружение помогают соблюдать баланс между городским ритмом и умиротворением.</p>
-          <p class="lead">Рядом с проектом — метро «Домодедовская» и скоростные магистрали. В «Пригороде Лесном» есть собственные детские сады, школы, поликлиника и магазины. Во дворах домов оборудован пешеходный бульвар, построены детские и спортивные площадки</p>
+          <p class="lead">«Серебряная Подкова» — уникальный объект загородной недвижимости в Домодедовском районе Московской области. Поселок располагается в окружении полей и смешанных лесов, в 15 км к югу от столицы между Симферопольским и Новокаширским шоссе, и занимает территорию в 56 га.</p>
+          <p class="lead">Своим названием поселок «Серебряная Подкова» обязан напоминающей подкову излучине реки Пахры, которая является украшением поселка. В солнечную погоду водная гладь реки искрится серебром, отражая склонившиеся над водой ивы и медленно проплывающие облака. В поселке более 300 домов.</p>
       </div>
       <div class="col-md-5">
-          <img src="src/assets/img/third_photo.jpg" alt="ЖК Пригород Лесное" width="90%" height="90%">
+          <img src="src/assets/img/жк_4.jpg" alt="Серебряная подкова" width="90%" height="90%">
       </div>
   </div>
   <hr class="featurette-divider">
@@ -116,7 +116,7 @@
       </div>
     </div>
     <div class="col-md-5 order-md-1">
-      <img src="src/assets/img/second_photo.webp" alt="ЖК Пригород Лесное" width="95%" height="95%">
+      <img src="src/assets/img/жк_2.jpg" alt="Серебряная подкова" width="90%" height="90%">
     </div>
   </div>
 </main>
