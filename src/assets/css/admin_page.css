@@ -293,7 +293,7 @@ button.buttons-pdf:hover {
   margin-top: 5%;
 }
 
-#signIn, #add_news, #update_news, #edit_users{
+#signIn, #add_news, #update_news, #edit_users, #add_poll{
   background-color: #d6a86c;
   color: white;
   border: 0;
@@ -305,7 +305,7 @@ button.buttons-pdf:hover {
   color: #6b3d08;
 }
 
-#signIn:hover, #add_news:hover, #update_news:hover, #edit_users:hover{
+#signIn:hover, #add_news:hover, #update_news:hover, #edit_users:hover, #add_poll:hover{
   background-color: #a06623;
   color: white;
   border: 0;

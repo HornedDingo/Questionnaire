@@ -48,7 +48,7 @@
 <div id="add-row-modal" class="modal popup-bg" style="display:none;">
   <div id="createUserModalContent" class="popup">
     <div class="modal-header pb-4 border-bottom-0">
-      <h1 class="fw-bold mb-0 fs-2">Создать новое голосование</h1>
+      <h1 style="margin-left: 10%;" class="fw-bold mb-0 fs-2">Создать новое голосование</h1>
       <button id="add-row-cancel" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="hideEditForm()"></button>
     </div>
     <div class="modal-body p-5 pt-0">
@@ -82,7 +82,7 @@
           </select>
         </div>
         <div class="form-floating mb-3">
-          <button name="add_poll" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Добавить запись</button>
+          <button style="background-color: #d6a86c; border:0;" name="add_poll" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Добавить запись</button>
         </div>
       </form>
     </div>

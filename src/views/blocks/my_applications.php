@@ -4,6 +4,8 @@
             <li><a href="?page=my_applications" id="header_link_2" class="nav-link">Мои заявления</a></li>
             <li><a href="?page=applications_entry" id="header_link_2" class="nav-link">Заявления на въезд</a></li>
             <li><a href="?page=applications_visit" id="header_link_2" class="nav-link">Заявления на посещение</a></li>
+            <li style="align-self: center;"><button id="newVisit" class="btnApplication" style="background-color: transparent; border: 0; color:#a06623;">Новая заявка на въезд</button></li>
+            <li style="align-self: center;"><button id="newEntry" class="btnApplication" style="background-color: transparent; border: 0; color:#a06623;">Новая заявка на посещение</button></li>
         </ul>
         <hr class="featurette-divider" style="color: #d6a86c; height:2px;">
     </div>
@@ -50,6 +52,33 @@
                         </div>
                         </a>
                         ';
+                        require_once dirname(__DIR__) . '../../functions/function.php';
+                        $application_array = get5ApplicationsEntry($_SESSION['ID_user']);
+                        foreach ($application_array as $application_item) {
+                            switch($application_item["application_status_ID"]){
+                                case 1:
+                                    $application_status_name = "Ожидает одобрения";
+                                    break;
+                                case 2:
+                                    $application_status_name = "Одобрено";
+                                    break;
+                                case 3:
+                                    $application_status_name = "Отклонено";
+                                    break;
+                            }
+                            echo'
+                            <a href="" style="margin-bottom:1%;" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                            <img src="/src/assets/icons/person-check-fill.svg" alt="twbs" width="25" height="25" class="flex-shrink-0" style="margin: auto;">
+                            <div class="d-flex gap-2 w-100 justify-content-between">
+                                <div>
+                                <h6 class="mb-0">'.$application_item["guests_surname"]. '</h6>
+                                <p class="mb-0 opacity-75">'.explode("\n", wordwrap($application_item['purpose_of_the_visit'], 250))[0].'...</p>
+                                </div>
+                                <small class="opacity-50 text-nowrap">'.$application_status_name.'</small>
+                            </div>
+                            </a>
+                            ';
+                        }
                     }
                 ?>
             </div>

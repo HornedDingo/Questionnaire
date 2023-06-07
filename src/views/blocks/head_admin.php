@@ -3,6 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Панель администратора</title>
 <link rel="stylesheet" href="/src/assets/css/admin_page.css">
+<link rel="stylesheet" href="/src/assets/css/my_applications.css">
 <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
