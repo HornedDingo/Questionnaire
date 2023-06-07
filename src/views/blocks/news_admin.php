@@ -50,7 +50,6 @@
         });
     });
 
-    //заполняем таблицу данными (обновление таблицы)
     function updateTable() {
         $.ajax({
             url: '../functions/update_table.php',
