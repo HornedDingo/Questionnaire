@@ -12,7 +12,6 @@
             return;
         }
         
-        // Удаление данных из таблицы news
         $stmt = $mysqli->prepare("DELETE FROM news WHERE ID_news = ?");
         $stmt->bind_param("i", $id);
         if (!$stmt->execute()) {

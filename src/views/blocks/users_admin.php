@@ -40,7 +40,6 @@
         });
     });
 
-    //открываем (или закрываем) форму создания нового пользователя
     var modal = document.getElementById('createUserModal');
     var openModalBtn = document.getElementById('openCreateUserModalBtn');
     var closeModalBtn = document.getElementById('closeModalBtn');
@@ -56,7 +55,6 @@
         }
     }
     
-    //заполняем таблицу данными (обновление таблицы)
     function updateTable() {
         $.ajax({
             url: '../functions/update_table.php',
@@ -69,7 +67,7 @@
             }
         });   
     }
-    //спрашиваем подтверждение удаления пользователя
+
     $('#myTable tbody').on('click', 'button.delete-row', function() {
         var data = $('#myTable').DataTable().row($(this).parents('tr')).data();
         var id = data[0];
@@ -78,7 +76,7 @@
             $('#myTable').DataTable().row($(this).parents('tr')).remove().draw();
         }
     });
-    //функция для удаления пользователя
+
     $(document).on("click", ".delete-row", function() {
         var row = $(this).closest("tr");
         var id = row.find("td:eq(0)").text();
@@ -95,7 +93,7 @@
             }
         });
     });
-    //обновляем данные записи в таблице
+    
     $('#editModal').on('submit', function(event) {
         event.preventDefault();
         var id = $('#editUserId').val();
@@ -126,7 +124,6 @@
         });
     });
 
-    // функция для переноса данных из таблицы в форму редактирования
     function fillEditForm(data) {
         var row = $(data).closest("tr");
         var userId = row.find("td:first-child").text();
@@ -144,13 +141,11 @@
     }
 
     $(document).ready(function() {
-        // при клике на кнопку редактирования заполняем форму данными из таблицы
         $("#myTable").on("click", ".edit-row", function() {
             fillEditForm($(this));
             $("#editModal").show();
         });
 
-        // закрываем модальное окно редактирования при клике на крестик или вне формы
         $("#editModal").on("click", function(event) {
             if (event.target == this) {
                 $(this).hide();

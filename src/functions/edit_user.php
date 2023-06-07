@@ -12,5 +12,5 @@
     $stmt->execute();
     $stmt->close();
     closeDB();
-    header('Location: ../views/welcome.php');
+    header('Location: ../views/admin_page.php?page=users');
 ?>
