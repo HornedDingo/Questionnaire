@@ -1,11 +1,13 @@
+<?php require_once dirname(__DIR__) . '../forms/add_new_entry_application.php' ?>
+<?php require_once dirname(__DIR__) . '../forms/add_new_visit_application.php' ?>
 <div class="row featurette">
     <div class="col-md-7 order-md-2" style=" justify-content: center; margin: auto;">
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style="margin-top: 2%;">
             <li><a href="?page=my_applications" id="header_link_2" class="nav-link">Мои заявления</a></li>
             <li><a href="?page=applications_entry" id="header_link_2" class="nav-link">Заявления на въезд</a></li>
             <li><a href="?page=applications_visit" id="header_link_2" class="nav-link">Заявления на посещение</a></li>
-            <li style="align-self: center;"><button id="newVisit" class="btnApplication" style="background-color: transparent; border: 0; color:#a06623;">Новая заявка на въезд</button></li>
-            <li style="align-self: center;"><button id="newEntry" class="btnApplication" style="background-color: transparent; border: 0; color:#a06623;">Новая заявка на посещение</button></li>
+            <li style="align-self: center;"><button id="newEntry" onclick="openAddForm()" class="btnApplication" style="background-color: transparent; border: 0; color:#a06623;">Новая заявка на въезд</button></li>
+            <li style="align-self: center;"><button id="newVisit" onclick="openAddForm2()" class="btnApplication" style="background-color: transparent; border: 0; color:#a06623;">Новая заявка на посещение</button></li>
         </ul>
         <hr class="featurette-divider" style="color: #d6a86c; height:2px;">
     </div>
@@ -85,3 +87,60 @@
         </div>
     </body>
 </html>
+<script>
+    function openAddForm() {
+        document.getElementById("add-form").style.display = "block";
+    }
+
+    function hideEditForm(){
+        document.getElementById("add-form").style.display = "none";
+    }
+
+    function openAddForm2() {
+        document.getElementById("add-new-form").style.display = "block";
+    }
+
+    function hideEditForm2() {
+        document.getElementById("add-new-form").style.display = "none";
+    }
+
+    $(document).ready(function() {
+    $('#add-entry-form').submit(function(event) {
+      event.preventDefault();
+      var formData = $(this).serialize();
+
+      $.ajax({
+        type: 'POST',
+        url: '../../src/functions/add_entry_application.php',
+        data: formData,
+        success: function(response) {
+          alert(response);
+          window.location.reload();
+        },
+        error: function() {
+          alert('Ошибка при отправке данных.');
+        }
+      });
+    });
+  });
+
+  $(document).ready(function() {
+    $('#add-visit-form').submit(function(event) {
+      event.preventDefault();
+      var formData = $(this).serialize();
+
+      $.ajax({
+        type: 'POST',
+        url: '../../src/functions/add_visit_application.php',
+        data: formData,
+        success: function(response) {
+          alert(response);
+          window.location.reload();
+        },
+        error: function() {
+          alert('Ошибка при отправке данных.');
+        }
+      });
+    });
+  });
+</script>
